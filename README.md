@@ -2,6 +2,8 @@
 
  https://votan14.github.io/ProjectPractice-JS/
 
- Creating tabs in JavaScript
+JavaScript tabs creation
 
- creating timer in JavaScript
+JavaScript timer creation
+
+JavaScript modal window creation
