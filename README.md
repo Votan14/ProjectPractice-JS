@@ -7,3 +7,5 @@ JavaScript tabs creation
 JavaScript timer creation
 
 JavaScript modal window creation
+
+Adding templates class for menu cards
