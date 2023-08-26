@@ -147,4 +147,73 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', showModalByScroll);
+
+
+    const recipeBox = document.querySelector('.recipe-box');
+
+    class newRecipe {
+        constructor(img, alt, title, descr, price) {
+            this.img = img;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.transfer = 38;
+            this.changeToUAH();
+        }
+
+        changeToUAH() {
+            this.price = this.price * this.transfer;
+        }
+
+        createRecipe() {
+            const recipeItem = document.createElement('div');
+            recipeItem.className = "menu__item";
+            recipeItem.innerHTML = `<img src=${this.img} alt=${this.alt}>
+            <h3 class="menu__item-subtitle">${this.title}</h3>
+            <div class="menu__item-descr">${this.descr}</div>
+            <div class="menu__item-divider"></div>
+            <div class="menu__item-price">
+                <div class="menu__item-cost">Цена:</div>
+                <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+            </div>`;
+            recipeBox.append(recipeItem);
+        }
+    }
+
+    const fitness = new newRecipe(
+        "img/tabs/vegy.jpg",
+        "vega",
+        `Меню "Фитнес"`,
+        `Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих
+овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной
+ценой и высоким качеством!`,
+        12
+    );
+
+    fitness.createRecipe();
+
+    const premium = new newRecipe(
+        "img/tabs/elite.jpg",
+        "premium",
+        `Меню “Премиум”`,
+        `В меню “Премиум” мы используем не только красивый дизайн упаковки, но
+    и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода
+    в ресторан! Оптимальная цена и высокое качество!`,
+        15
+    );
+
+    premium.createRecipe();
+
+    const postnoje = new newRecipe(
+        "img/tabs/post.jpg",
+        "postnoje",
+        `Меню "Постное"`,
+        `Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие
+    продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное
+    количество белков за счет тофу и импортных вегетарианских стейков.`,
+        8
+    );
+
+    postnoje.createRecipe();
 });
