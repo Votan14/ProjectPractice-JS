@@ -9,3 +9,5 @@ JavaScript timer creation
 JavaScript modal window creation
 
 Adding templates class for menu cards
+
+Add FormData and XMLHttpRequest for forms
